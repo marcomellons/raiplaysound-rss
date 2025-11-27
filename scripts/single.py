@@ -81,7 +81,7 @@ class RaiParser:
 
             fitem = FeedItem()
             fitem.title = item["toptitle"]
-            fitem.id = "giuliomagnifico-raiplay-feed-" + item["uniquename"]
+            fitem.id = "marcomellons-raiplaysound-rss-" + item["uniquename"]
             fitem.update = _datetime_parser(item["track_info"].get("date", dt.now().isoformat()))
             fitem.url = urljoin(self.url, item["track_info"]["page_url"])
             fitem.content = item.get("description", item["title"])
@@ -122,7 +122,7 @@ def main():
 
     parser = argparse.ArgumentParser(
         description="Genera RSS da RaiPlaySound",
-        epilog="Info su https://github.com/giuliomagnifico/raiplay-feed/"
+        epilog="Info su https://github.com/marcomellons/raiplaysound-rss/"
     )
 
     parser.add_argument("url", help="URL podcast RaiPlaySound")
